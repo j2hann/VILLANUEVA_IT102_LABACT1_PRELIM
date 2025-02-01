@@ -11,11 +11,15 @@ try:
         print("Invalid input. Must choose between 1-5.")
         exit()
     else:
-        num1 = float(input("Enter your first number: "))
-        num2 = float(input("Enter your second number: "))
+        try:
+            num1 = float(input("Enter your first number: "))
+            num2 = float(input("Enter your second number: "))
         
-        if choice == 4 and num2 == 0:
-            print("Invalid input. Division by zero is not allowed.")
+            if choice == 4 and num2 == 0:
+                print("Invalid input. Value must not be 0.")
+                exit()
+        except ValueError:
+            print("Invalid input. Must be a numeric value.")
             exit()
     
     if choice == 1:
@@ -34,3 +38,4 @@ try:
 
 except ValueError:
     print("Invalid input. Must be a numeric value.")
+    
